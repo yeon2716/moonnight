@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <img src="img/bg.jpg" alt="bg" id="bg">
+        <img src="img/moon.png" alt="moon" id="moon">
+        <img src="img/mountain.png" alt="mountain" id="mountain">
+        <img src="img/road.png" alt="road" id="road">
+        <h2 class="text" id="text">Moon Night</h2>
+    </section>
+    <section class="content">
+        <h3>Parallax Background Scrolling</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquid repellendus modi tempore velit, amet laudantium perspiciatis alias vero, debitis magni blanditiis, ut rem pariatur beatae id quibusdam inventore! Enim consequatur autem molestiae et. A ducimus distinctio ipsum commodi pariatur ullam quisquam earum accusantium possimus accusamus quidem, tempore est expedita et nesciunt labore necessitatibus esse. Veniam expedita delectus nemo nostrum non! Consequuntur, delectus ex. Maiores non fugit harum ab porro repudiandae soluta eligendi distinctio sequi? Voluptatum soluta atque id accusantium animi ad rerum exercitationem, consectetur velit possimus sit. Doloribus nulla reprehenderit quas molestiae laborum a nam quaerat! Labore, quaerat doloremque?</p>
+    </section>
+
+    <script>
+     //let bg = document.getElementById('bg');
+     let bg = document.querySelector("#bg");
+     let moon = document.getElementById('moon');
+     let mountain = document.getElementById('mountain');
+     let road = document.getElementById('road');
+     let text  = document.getElementById('text');
+
+     //scroll은 window의 이밴트이다.
+     window.addEventListener('scroll',function(){
+         let value = window.scrollY;
+         console.log(value)
+
+         moon.style.left = -value * 0.2/* 스크롤 천천히 내림 */ +'px';
+         moon.style.top = value * 0.35 +'px';
+
+
+         bg.style.top= value * 0.2 + 'px';
+         mountain.style.top= -value * 0.15 + 'px';
+         road.style.top= value * 0.15 + 'px'; /* 스크롤보다 빠름 */
+         text.style.top= value + 'px'; /* 스크롤 그대로 속도 */
+
+
+
+
+
+
+     })
+
+    </script>
+    
+</body>
+</html>
